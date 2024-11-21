@@ -31,7 +31,7 @@ const itemRestartAudioEngineOnDeviceChange = (props) => {
                 "{{REASON}}",
                 STRING_CONSOLE_ENTRIES.restartAudioEngineReasons.devicechange
               ),
-              `(${chalk.magenta(devices.old)} => ${chalk.green(devices.new)})`
+              `(${chalk.magenta(((devices.old > 0) ? devices.old : 0))} => ${chalk.green(devices.new)})`
             );
             let vm = getVoicemeeterConnection();
             vm && vm.sendCommand("Restart", 1);
